@@ -1,0 +1,200 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{NAstyle}[2026/10/12 Automatic CV page design]
+
+% ---------------------------------------------------------
+% REQUIRED PACKAGES
+% ---------------------------------------------------------
+
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{eso-pic}
+\RequirePackage{fontawesome}
+\RequirePackage{hyperref}
+\RequirePackage{calc}
+\RequirePackage{relsize}
+\RequirePackage{xspace}
+
+
+% ---------------------------------------------------------
+% HYPERREF: CLEAN PDF BOOKMARKS
+% ---------------------------------------------------------
+
+\pdfstringdefDisableCommands{%
+    % Ignore layout and spacing commands in PDF bookmarks
+    \def\makebox#1#2#3{#3}%
+    \def\widthof#1{}%
+    \def\hfill{ }%
+    \def\quad{ }%
+    \def\qquad{ }%
+    \def\hspace#1{ }%
+    \def\color#1{}%
+    \def\textcolor#1#2{#2}%
+    \def\faUser{}%
+    \def\faInfo{}%
+    \def\faGraduationCap{}%
+    \def\faGears{}%
+    \def\faGlobe{}%
+    \def\faTrophy{}%
+    \def\faWrench{}%
+    \def\faLanguage{}%
+}
+
+
+% ---------------------------------------------------------
+% THEME
+% ---------------------------------------------------------
+
+\definecolor{NA_Red}{RGB}{208,25,56}
+
+% ---------------------------------------------------------
+% CUSTOMIZABLE INFORMATION
+% ---------------------------------------------------------
+
+\providecommand{\school}{%
+    \textcolor{NA_Red}{UNINA | Department of Physics and Geology}%
+}
+
+
+% ---------------------------------------------------------
+% IMAGE PATHS
+% ---------------------------------------------------------
+
+\newcommand{\CVHeaderImage}{images/na_header.png}
+\newcommand{\CVFooterImage}{images/footer.png}
+\newcommand{\CVWatermarkImage}{images/na_logo_background.png}
+
+% ---------------------------------------------------------
+% HEADER SETTINGS
+% ---------------------------------------------------------
+
+% Height of the header background
+\newcommand{\CVHeaderHeight}{1.5cm}
+
+% Logo width
+\newcommand{\CVLogoWidth}{0.32\textwidth}
+
+% Logo vertical offset from the top edge
+\newcommand{\CVLogoYOffset}{-0.2cm}
+
+% Logo maximum height
+\newcommand{\CVLogoHeight}{1.1cm}
+
+% Department name vertical offset
+\newcommand{\CVSchoolYOffset}{-0.5cm}
+
+% ---------------------------------------------------------
+% HEADER AND WATERMARK ON EVERY PAGE
+% ---------------------------------------------------------
+
+\AddToShipoutPictureBG{%
+    % Header
+    \begin{tikzpicture}[remember picture,overlay]
+
+        \node[
+            anchor=north,
+            inner sep=0pt
+        ] at (current page.north) {%
+            \includegraphics[
+                width=\paperwidth,
+                height=\CVHeaderHeight
+            ]{\CVHeaderImage}%
+        };
+
+        % Department name
+        \node[
+            anchor=north east,
+            inner sep=0pt,
+            xshift=-0.5cm,
+            yshift=\CVSchoolYOffset
+        ] at (current page.north east) {%
+            \textcolor{white}{\textbf{\school}}%
+        };
+
+    \end{tikzpicture}%
+
+    % Watermark on every page
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[
+            opacity=0.09,
+            inner sep=0pt
+        ] at (current page.center) {%
+            \includegraphics[
+                width=\paperwidth,
+                keepaspectratio
+            ]{\CVWatermarkImage}%
+        };
+    \end{tikzpicture}%
+}
+% ---------------------------------------------------------
+% FOOTER ON EVERY PAGE
+% ---------------------------------------------------------
+
+\AddToShipoutPictureFG{%
+    \begin{tikzpicture}[remember picture,overlay]
+
+        % Footer background
+        \node[
+            anchor=south,
+            inner sep=0pt
+        ] (cvfooter) at (current page.south) {%
+            \includegraphics[
+                width=\paperwidth
+            ]{\CVFooterImage}%
+        };
+
+        % Email: left
+        \node[
+            anchor=west,
+            inner sep=0pt,
+            xshift=0.8cm
+        ] at (cvfooter.west) {%
+            \scriptsize
+            \textcolor{NA_Red}{%
+                \faEnvelope\quad
+                \href{mailto:\CVEmail}{\CVEmail}%
+            }%
+        };
+
+        % Phone: center
+        \node[
+            anchor=center,
+            inner sep=0pt
+        ] at (cvfooter.center) {%
+            \scriptsize
+            \textcolor{NA_Red}{%
+                \faPhone\quad \CVPhone %
+            }%
+        };
+
+        % GitHub: right
+        \node[
+            anchor=east,
+            inner sep=0pt,
+            xshift=-0.8cm
+        ] at (cvfooter.east) {%
+            \scriptsize
+            \textcolor{NA_Red}{%
+                \faGithub\quad
+                \href{\CVGitHubURL}{\CVGitHubLabel}%
+            }%
+        };
+
+    \end{tikzpicture}%
+}
+% ---------------------------------------------------------
+% PAGE LAYOUT HELPERS
+% ---------------------------------------------------------
+
+% Reserve space below the header
+\newcommand{\CVHeaderSpace}{%
+    \vspace*{0.1cm}%
+}
+
+% Start a new page and reserve space below the header
+\newcommand{\CVNewPage}{%
+    \newpage
+    \CVHeaderSpace
+}
+
+\endinput
