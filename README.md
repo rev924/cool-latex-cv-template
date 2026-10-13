@@ -40,7 +40,7 @@ For example, using XeLaTeX:
 xelatex main.tex
 
 ## Project Structure
-.
+```
 ├── main.tex
 ├── NAstyle.sty
 ├── images/
