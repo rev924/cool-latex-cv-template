@@ -48,6 +48,8 @@ xelatex main.tex
 │   ├── footer.png
 │   ├── na_logo_background.png
 │   └── example_avatar.png
+├── preview/
+│   └── cv-example.pdf
 ├── README.md
 ├── LICENSE
 └── .gitignore
