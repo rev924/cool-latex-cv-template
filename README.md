@@ -67,6 +67,7 @@ Edit the following commands in main.tex:
 Background and other University pictures
 
 Edit the following commands in NAstyle.sty:
+
 \newcommand{\CVHeaderImage}{images/na_header.png}
 \newcommand{\CVFooterImage}{images/footer.png}
 \newcommand{\CVWatermarkImage}{images/na_logo_background.png}
