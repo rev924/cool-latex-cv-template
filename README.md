@@ -19,7 +19,7 @@ Example content for academic and technical CVs
 
 ## Preview
 
-![CV Preview](preview/cv-preview.png)
+![CV Preview](preview/cv-preview.jpg)
 
 [📄 Download the full PDF](preview/cv-example.pdf)
 
