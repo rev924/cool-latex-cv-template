@@ -1,0 +1,14 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
