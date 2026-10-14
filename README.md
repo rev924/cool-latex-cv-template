@@ -1,21 +1,14 @@
 # cool-latex-cv-template
-A customizable and easy LaTeX template for academic and technical CVs
 
-Custom LaTeX CV Template
-
-A customizable LaTeX template for creating clean, professional academic and technical CVs.
-
-The template features a custom header and footer, a background watermark, Font Awesome icons, configurable contact information, and a structured multi-page layout.
+A customizable LaTeX template for creating professional academic and technical CVs, featuring a clean layout and flexible styling.
 
 Features
-Custom page header and footer
-Background watermark on every page
-Configurable colors and branding
-Font Awesome icons for section headings
-Customizable contact information
-Multi-page CV layout
-Clickable email and GitHub links
-Example content for academic and technical CVs
+Custom layout: Headers, footers, and background watermarks.
+Flexible styling: Configurable colors, branding, and contact information.
+Font Awesome icons: Visual elements for section headings.
+Multi-page support: A structured layout suitable for detailed CVs.
+Clickable links: Integrated email and GitHub links.
+Example content: A starting point for tailoring your CV to academic or technical positions.
 
 ## Preview
 
