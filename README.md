@@ -3,17 +3,17 @@
 A customizable LaTeX template for creating professional academic and technical CVs, featuring a clean layout and flexible styling.
 
 Features
-Custom layout: Headers, footers, and background watermarks.
+- Custom layout: Headers, footers, and background watermarks.
 
-Flexible styling: Configurable colors, branding, and contact information.
+- Flexible styling: Configurable colors, branding, and contact information.
 
-Font Awesome icons: Visual elements for section headings.
+- Font Awesome icons: Visual elements for section headings.
 
-Multi-page support: A structured layout suitable for detailed CVs.
+- Multi-page support: A structured layout suitable for detailed CVs.
 
-Clickable links: Integrated email and GitHub links.
+- Clickable links: Integrated email and GitHub links.
 
-Example content: A starting point for tailoring your CV to academic or technical positions.
+- Example content: A starting point for tailoring your CV to academic or technical positions.
 
 ## Preview
 
